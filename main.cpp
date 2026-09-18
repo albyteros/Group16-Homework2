@@ -47,7 +47,7 @@ int main( int argc, char * argv[] )
 	cout << "Yearly Interest Rate % -> " << yearly_interest_rate << endl;
 	cout << "Monthly Payment -> " << monthly_payment << endl;
 
-	int month = 1;
+	int month = 0;
 	double monthly_interest_rate = (yearly_interest_rate / 12);
 
 
@@ -67,6 +67,7 @@ int main( int argc, char * argv[] )
     balance += interest;
     balance -= monthly_payment;
     total_interest += interest;
+    month++;
     
 	// print block- we may need a better alignment than 5 whitespaces
     std::cout << month << "     ";
@@ -75,7 +76,6 @@ int main( int argc, char * argv[] )
     std::cout << monthly_interest_rate << "     ";
     std::cout << interest << "     ";
     std::cout << (monthly_payment - interest) << std::endl;
-    month++;
 	}
 
     std::cout << "It takes " << month << " months to pay off the loan" << std::endl;
